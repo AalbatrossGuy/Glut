@@ -1,0 +1,20 @@
+<html lang="en">
+<head>
+  
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{ dropzone.load_css() }}
+    <<title>Flask Test</title>
+</head>
+
+<body>
+
+  {{ dropzone.create(action='upload') }}
+  <button id="upload">Upload</button>
+
+  {{ dropzone.load_js() }}
+  {{ dropzone.config() }}
+
+</body>
+</html>
