@@ -5,18 +5,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
     {{ dropzone.load_css() }}
     
-    <title>AalbaCloud v0.0</title>
+    <title>Flask Test</title>
 </head>
 
-<body>
+<nav>
+  <a href="/">HOME</a>
+  <a href="upload">UPLOAD</a>
+  <!-- <a href="#">placeholder-1</a> -->
+  <div id="indicator"></div>
+</nav>
 
+<body>
   {{ dropzone.create(action='upload') }}
-  <button id="upload">Upload</button>
+  <button class="updbtn" id="upload">Upload</button>
 
   {{ dropzone.load_js() }}
   {{ dropzone.config() }}
-
 </body>
 </html>
