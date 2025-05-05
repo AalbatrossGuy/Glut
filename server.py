@@ -19,6 +19,7 @@ app.config.update(
         DROPZONE_UPLOAD_ON_CLICK=os.getenv("DROPZONE_UPLOAD_ON_CLICK"),
         DROPZONE_INPUT_NAME=f"{os.getenv('DROPZONE_INPUT_NAME')}",
         DROPZONE_UPLOAD_MULTIPLE=os.getenv("DROPZONE_UPLOAD_MULTIPLE"),
+        DROPZONE_MAX_FILE_SIZE=int(os.getenv("DROPZONE_MAX_FILE_SIZE")),
 )
 
 @app.get("/")
@@ -36,7 +37,6 @@ def upload():
                 print(secure_filename(f.filename))
                 print(os.path.join(app.config['UPLOAD_PATH'], secure_filename(f.filename)))
                 f.save(os.path.join(app.config['UPLOAD_PATH'], secure_filename(f.filename)))
-
     return render_template("upload.html")
 
 
