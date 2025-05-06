@@ -1,28 +1,59 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <html lang="en">
 <head>
-  
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/style.css">
-    {{ dropzone.load_css() }}
-    
+    <script src="https://unpkg.com/@deltablot/dropzone@7/dist/dropzone-min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@deltablot/dropzone@7/dist/dropzone.css"
+      type="text/css"
+    />
+
     <title>Flask Test</title>
 </head>
+
+
+<style>
+
+.dropzone .dz-preview .dz-progress {
+    opacity: 1;
+    z-index: 1000;
+    pointer-events: none;
+    position: absolute;
+    height: 16px;
+    left: 50%;
+    top: 180%;
+    /* margin-top: -8px; */
+    width: 80px;
+    /* margin-left: +50px; */
+    background: rgba(0, 255, 0, 0.6);
+    border-radius: 8px;
+    overflow: hidden
+}
+
+</style>
 
 <nav>
   <a href="/">HOME</a>
   <a href="upload">UPLOAD</a>
-  <!-- <a href="#">placeholder-1</a> -->
   <div id="indicator"></div>
 </nav>
 
 <body>
-  {{ dropzone.create(action='upload') }}
-  <button class="updbtn" id="upload">Upload</button>
-
-  {{ dropzone.load_js() }}
-  {{ dropzone.config() }}
+    <form action="/upload" enctype="multipart/form-data" method="POST" class="dropzone" id="testDrop">
+      <button type="submit" class="updbtn" id="updbtn">Submit</button>
+    </form>
+      <script>
+        const dropzone = new Dropzone(".dropzone", {
+          url: "/upload",
+          paramName:"myfiles",
+          maxFilesize: 2,
+          // dictFileTooBig: "File is too big - [{{filesize}}mb]. Max allowed filesize - {{maxFilesize}}mb.",
+        });
+      </script>
 </body>
 </html>
