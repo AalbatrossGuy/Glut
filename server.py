@@ -32,3 +32,17 @@ def upload():
                 print(os.path.join(app.config['UPLOAD_PATH'], secure_filename(f.filename)))
                 f.save(os.path.join(app.config['UPLOAD_PATH'], secure_filename(f.filename)))
     return render_template("upload.html")
+
+@app.route("/gallery", methods=["GET"])
+def gallery():
+    files = sorted(os.listdir(app.config['UPLOAD_PATH']))
+    print(files)
+    return render_template("gallery.html")
+
+
+
+
+
+
+if __name__ == "__main__":
+    app.run(debug=True, host="0.0.0.0", port=4000)
