@@ -40,20 +40,20 @@
 <nav>
   <a href="/">HOME</a>
   <a href="upload">UPLOAD</a>
+  <a href="gallery">GALLERY</a>
   <div id="indicator"></div>
 </nav>
 
 <body>
     <form action="/upload" enctype="multipart/form-data" method="POST" class="dropzone" id="testDrop">
-      <button type="submit" class="updbtn" id="updbtn">Submit</button>
+      <!-- <button type="submit" class="updbtn" id="updbtn">Submit</button> -->
     </form>
-      <script>
-        const dropzone = new Dropzone(".dropzone", {
-          url: "/upload",
-          paramName:"myfiles",
-          maxFilesize: 2,
-          // dictFileTooBig: "File is too big - [{{filesize}}mb]. Max allowed filesize - {{maxFilesize}}mb.",
-        });
-      </script>
+    <script>
+      const dropzone = new Dropzone(".dropzone", {
+        url: "/upload",
+        paramName:"myfiles",
+        maxFilesize: 10,
+      });
+    </script>
 </body>
 </html>
