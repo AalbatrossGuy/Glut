@@ -1,15 +1,6 @@
-html,
 body {
   height: 100%;
 }
-
-/* dropzone dz-clickable { */
-/*   top:50%; */
-/* } */
-
-/* #full-upload{ */
-/*   top:50%; */
-/* } */
 
 body {
   margin: 0;
@@ -123,12 +114,6 @@ nav a:nth-child(3):hover ~ #indicator {
   background: linear-gradient(130deg, purple, palevioletred);
 }
 
-.dropzone{
-  margin: 10%;
-  min-height: 20px;
-  font-size: 20px;
-}
-
 .updbtn{
   position: absolute;
   top: 40%;
@@ -138,42 +123,4 @@ nav a:nth-child(3):hover ~ #indicator {
   width: 70px;
   height: 50px;
   background-color: #f2f2f2;
-}
-
-
-
-.dz-filename{
-  font-size: 17px;
-  position: absolute;
-  top: 350%;
-}
-
-/* .dz-progress { */
-/*   position: absolute; */
-/*   top:200%; */
-/*   background: rgba(60, 179, 113); */
-/* } */
-
-.dropzone .dz-preview .dz-progress {
-    opacity: 1;
-    z-index: 1000;
-    pointer-events: none;
-    position: absolute;
-    height: 16px;
-    left: 50%;
-    top: 180%;
-    margin-top: -8px;
-    width: 80px;
-    margin-left: -40px;
-    background: rgba(0, 255, 0, 0.6);
-    border-radius: 8px;
-    overflow: hidden
-}
-
-.dz-size{
-  
-  /* margin: 50%; */
-  position: absolute;
-  top: 450%;
-
 }
