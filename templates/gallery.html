@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>GALLERY</title>
-    <link href="../static/css/style.css" rel="stylesheet">
+    <link href="../static/css/gallery.css" rel="stylesheet">
   </head>
   <nav>
   <a href="/">HOME</a>
@@ -13,6 +13,19 @@
   <div id="indicator"></div>
 </nav>
   <body>
-    THIS IS GALLERY 
+    <div class="file-grid">
+        {% for file in files %}
+            <div class="file-card">
+                {% if file.ext in ['png', 'jpg', 'jpeg', 'gif'] %}
+                    <img src="{{ file.path }}" alt="{{ file.name }}">
+                {% else %}
+                    <img src="{{ url_for('static', filename='icons/icon.png') }}" alt="File icon">
+                {% endif %}
+                <p>{{ file.name }}</p>
+            </div>
+        {% else %}
+            <p>No files found.</p>
+        {% endfor %}
+    </div>
   </body>
 </html>
