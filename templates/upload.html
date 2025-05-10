@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/upload.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Flask Test</title>
 </head>
 
@@ -13,13 +14,18 @@
 <nav>
   <a href="/">HOME</a>
   <a href="upload">UPLOAD</a>
+  <a href="gallery">GALLERY</a>
   <div id="indicator"></div>
 </nav>
 
 <body>
     <form action="/upload" method="POST" enctype="multipart/form-data">
       <input type = "file" name = "myfile" accept = "*">
-      <button type="submit">SUBMIT</button>
+      <!-- <button type="submit">SUBMIT</button> -->
+      <button type="submit" class="cursor-pointer transition-all bg-blue-500 text-white px-6 py-2 rounded-lg
+        border-blue-600 border-b-[4px] hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px] 
+        active:border-b-[2px] active:brightness-90 active:translate-y-[2px]">SUBMIT
+</button>
     </form>
 </body>
 </html>
