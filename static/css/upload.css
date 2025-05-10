@@ -160,6 +160,7 @@ input[type="file"]::before {
   pointer-events: none;
   /*   top: 11px; */
   left: 40px;
+  top: 13px;
   color: #0964b0;
   content: "Upload File";
 }
