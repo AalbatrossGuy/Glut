@@ -1,4 +1,4 @@
-import secrets, time
+import secrets, time, os, math
 import os.path
 from werkzeug.utils import secure_filename
 from flask import Flask, render_template, request, url_for,  send_from_directory, Blueprint
@@ -11,10 +11,16 @@ rootdir = os.path.abspath(os.path.dirname(__file__))
 print(rootdir)
 app.config["SECRET_KEY"] = str(secrets.SystemRandom().getrandbits(128))
 app.config["MAX_CONTENT_LENGTH"] = 800 * 1000 * 1000 # 512 MB limit
-# app.config.update(UPLOAD_PATH=os.path.join(rootdir, f'{os.getenv("ROOT_DIRECTORY")}/'))
 app.config["UPLOAD_PATH"] = os.getenv("UPLOAD_PATH")
 storage_directory = Blueprint('storage_directory', __name__, url_prefix="/gallery", static_folder="GlutRoot")
 app.register_blueprint(storage_directory)
+
+def format_size(file_size):
+    UNIT = ("B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB") # Following the decimal system
+    get_unit = int(math.floor(math.log(file_size, 1000)))
+    p = math.pow(1000, get_unit)
+    final_size = round(file_size / p, 2)
+    return f"{final_size} {UNIT[get_unit]}"
 
 @app.get("/")
 def index():
@@ -51,7 +57,8 @@ def gallery():
         file_meta.append({
             'name': file,
             'path': url_for("storage_directory.static", filename=file),
-            'ext': file.rsplit('.', 1)[1].lower()
+            'ext': file.rsplit('.', 1)[1].lower(),
+            'size': format_size(os.stat(f"GlutRoot/{file}").st_size),
         })
         print(file_meta)
     return render_template("gallery.html", files=file_meta)
