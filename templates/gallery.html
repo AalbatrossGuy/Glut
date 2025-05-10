@@ -19,9 +19,11 @@
                 {% if file.ext in ['png', 'jpg', 'jpeg', 'gif'] %}
                     <img src="{{ file.path }}" alt="{{ file.name }}">
                 {% else %}
-                    <img src="{{ url_for('static', filename='icons/icon.png') }}" alt="File icon">
+                    <img class="default_icon" src="{{ url_for('static', filename='icons/default_icon.png') }}" alt="File icon">
                 {% endif %}
                 <p>{{ file.name }}</p>
+                <p>{{ file.size }}</p>
+                <p> <a href="{{ file.path }}">Download</a>
             </div>
         {% else %}
             <p>No files found.</p>
