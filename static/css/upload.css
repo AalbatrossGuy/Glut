@@ -89,6 +89,26 @@ nav a:nth-child(3):after {
   background-color: palevioletred;
 }
 
+
+nav a:nth-child(4):before {
+  background-color: darkgreen;
+}
+
+
+nav a:nth-child(4):after {
+  background-color: lightgreen;
+}
+
+
+nav a:nth-child(5):before {
+  background-color: darkblue;
+}
+
+
+nav a:nth-child(5):after {
+  background-color: lightblue;
+}
+
 #indicator {
   position: absolute;
   left: 5%;
@@ -114,13 +134,23 @@ nav a:nth-child(1):hover ~ #indicator {
 }
 
 nav a:nth-child(2):hover ~ #indicator {
-  left: 34%;
+  left: 28%;
   background: linear-gradient(130deg, #00e2ff, #89ff00);
 }
 
 nav a:nth-child(3):hover ~ #indicator {
-  left: 70%;
+  left: 49%;
   background: linear-gradient(130deg, purple, palevioletred);
+}
+
+nav a:nth-child(4):hover ~ #indicator {
+  left: 70%;
+  background: linear-gradient(130deg, green, yellow);
+}
+
+nav a:nth-child(5):hover ~ #indicator {
+  left: 89%;
+  background: linear-gradient(130deg, darkblue, lightblue);
 }
 
 input[type="file"] {
