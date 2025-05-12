@@ -1,0 +1,258 @@
+html,
+body {
+    height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    top: 50%;
+    left: -35%;
+    display: flex;
+    width: 33.333%;
+    flex-direction: row;
+    z-index: 999;
+    font-size: 10px;
+  }
+  .center {
+    text-align: center;
+  }
+}
+
+body {
+    margin: 0;
+    top:50%;
+    background-color: #FFFFFF;
+    overflow: hidden;
+}
+
+nav {
+    position: absolute;
+    top: 5%;
+    right: 0;
+    left: 0;
+    width: 319px;
+    display: table;
+    margin: 0 auto;
+    transform: translateY(-50%);
+}
+
+nav a {
+    position: relative;
+    width: 33.333%;
+    display: table-cell;
+    text-align: center;
+    color: #949494;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: 0.2s ease color;
+}
+
+nav a:before,
+nav a:after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 0.2s ease transform;
+}
+
+nav a:before {
+    top: 0;
+    left: 10px;
+    width: 6px;
+    height: 6px;
+}
+
+nav a:after {
+    top: 5px;
+    left: 18px;
+    width: 4px;
+    height: 4px;
+}
+
+nav a:nth-child(1):before {
+    background-color: yellow;
+}
+
+nav a:nth-child(1):after {
+    background-color: red;
+}
+
+nav a:nth-child(2):before {
+    background-color: #00e2ff;
+}
+
+nav a:nth-child(2):after {
+    background-color: #89ff00;
+}
+
+nav a:nth-child(3):before {
+    background-color: purple;
+}
+
+nav a:nth-child(3):after {
+    background-color: palevioletred;
+}
+
+nav a:nth-child(4):before {
+  background-color: darkgreen;
+}
+
+
+nav a:nth-child(4):after {
+  background-color: lightgreen;
+}
+
+
+nav a:nth-child(5):before {
+  background-color: darkblue;
+}
+
+
+nav a:nth-child(5):after {
+  background-color: lightblue;
+}
+
+#indicator {
+position: absolute;
+left: 5%;
+bottom: 0;
+width: 30px;
+height: 3px;
+/* background-color: #fff; */
+border-radius: 5px;
+transition: 0.2s ease left;
+}
+
+nav a:hover {
+    /* color: #fff; */
+}
+
+nav a:hover:before,
+nav a:hover:after {
+    transform: scale(1);
+}
+
+nav a:nth-child(1):hover ~ #indicator {
+    background: linear-gradient(130deg, yellow, red);
+}
+
+nav a:nth-child(2):hover ~ #indicator {
+    left: 28%;
+    background: linear-gradient(130deg, #00e2ff, #89ff00);
+}
+
+nav a:nth-child(3):hover ~ #indicator {
+    left: 49%;
+    background: linear-gradient(130deg, purple, palevioletred);
+}
+
+nav a:nth-child(4):hover ~ #indicator {
+  left: 70%;
+  background: linear-gradient(130deg, green, yellow);
+}
+
+nav a:nth-child(5):hover ~ #indicator {
+  left: 89%;
+  background: linear-gradient(130deg, darkblue, lightblue);
+}
+
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body {
+    background: white;
+    height: 100vh;
+}
+.center {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); FOUND YOU
+    max-width: 420px;
+    width: 100%;
+    background: rgba(180, 180, 180, 0.2);
+    border-radius: 50px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+}
+.center h1 {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid silver;
+}
+.center form {
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+form .txt_field {
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+.txt_field input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+.txt_field label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.txt_field span::before {
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #2691d9;
+    transition: 0.5s;
+}
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label {
+    top: -10px;
+    color: #2691d9;
+}
+.txt_field input:focus ~ span::before,
+.txt_field input:valid ~ span::before {
+    width: 100%;
+}
+
+input[type="submit"] {
+    position: relative;
+    width: 80%;
+    top: -12px;
+    left: 35px;
+    height: 50px;
+    background: #2691d9;
+    border-radius: 50px;
+    font-size: 18px;
+    color: #e9f4fb;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    transition: 0.5s;
+    border: none;
+}
+input[type="submit"]:hover {
+    border-color: #2691d9;
+}
+
+
