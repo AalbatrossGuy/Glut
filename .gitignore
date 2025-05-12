@@ -3,3 +3,4 @@ __pycache__/server.cpython-313.pyc
 venv
 GlutRoot
 .env
+users.json
