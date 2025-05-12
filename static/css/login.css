@@ -5,16 +5,9 @@ body {
 
 @media screen and (max-width: 768px) {
   nav {
-    top: 50%;
-    left: -35%;
     display: flex;
-    width: 33.333%;
     flex-direction: row;
-    z-index: 999;
     font-size: 10px;
-  }
-  .center {
-    text-align: center;
   }
 }
 
@@ -26,7 +19,7 @@ body {
 }
 
 nav {
-    position: absolute;
+    position: relative;
     top: 5%;
     right: 0;
     left: 0;
@@ -175,7 +168,7 @@ body {
     position: relative;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); FOUND YOU
+    transform: translate(-49%, -70%);
     max-width: 420px;
     width: 100%;
     background: rgba(180, 180, 180, 0.2);
