@@ -1,39 +1,35 @@
 body {
+  height: 100%;
+}
+
+body {
   margin: 0;
   top:50%;
-  background-color: #FFFFFF;
+  /* background-color: #292929; */
   overflow: hidden;
 }
 
-
-
-nav {
-  position: relative;
-  top: 5%;
-  right: 0;
-  left: 0;
-  width: 319px;
-  display: flex;
-  margin: 0 auto;
-  transform: translateY(-50%);
+.wrapperhead {
+    display: flex;
+    margin: 0% 30% 0% 30%;
 }
 
-@media screen and (max-width: 768px) {
+/*@media screen and (max-width: 768px) {
   nav {
-    position: relative;
-    left: 0;
-    right: 0;
-    width: 25%;
-    padding: 10% 87% 9% 1%;
-    display: table-cell;
+    top: 5%;
+    left: -25%;
+    display: flex;
+    width: 40%;
     flex-direction: row;
-    font-size: 18px;
+    font-size: 10px;
   }
 }
+*/
 
-nav a {
+.wrapperhead a {
   position: relative;
-  width: 33.333%;
+  width: 33.333%; 
+  width: 20%;
   display: table-cell;
   text-align: center;
   color: #949494;
@@ -42,10 +38,10 @@ nav a {
   font-weight: bold;
   padding: 10px 20px;
   transition: 0.2s ease color;
-}
+} 
 
-nav a:before,
-nav a:after {
+.wrapperhead a:before,
+.wrapperhead a:after {
   content: "";
   position: absolute;
   border-radius: 50%;
@@ -53,14 +49,15 @@ nav a:after {
   transition: 0.2s ease transform;
 }
 
-nav a:before {
+
+.wrapperhead a:before {
   top: 0;
   left: 10px;
   width: 6px;
   height: 6px;
 }
 
-nav a:after {
+.wrapperhead a:after {
   top: 5px;
   left: 18px;
   width: 4px;
@@ -91,7 +88,6 @@ nav a:nth-child(3):after {
   background-color: palevioletred;
 }
 
-
 nav a:nth-child(4):before {
   background-color: darkgreen;
 }
@@ -110,6 +106,7 @@ nav a:nth-child(5):before {
 nav a:nth-child(5):after {
   background-color: lightblue;
 }
+
 
 #indicator {
   position: absolute;
@@ -154,75 +151,3 @@ nav a:nth-child(5):hover ~ #indicator {
   left: 89%;
   background: linear-gradient(130deg, darkblue, lightblue);
 }
-
-input[type="file"] {
-  outline: none;
-  padding: 4px;
-  margin: -4px;
-}
-
-input[type="file"]:focus-within::file-selector-button,
-input[type="file"]:focus::file-selector-button {
-  outline: 2px solid #0964b0;
-  outline-offset: 2px;
-}
-
-input[type="file"]::before {
-  top: 16px;
-}
-
-input[type="file"]::after {
-  top: 14px;
-}
-
-
-input[type="file"] {
-  position: relative;
-}
-
-input[type="file"]::file-selector-button {
-  width: 136px;
-  color: transparent;
-}
-
-input[type="file"]::before {
-  position: absolute;
-  pointer-events: none;
-  /* top: 11px; */
-  left: 40px;
-  top: 13px;
-  color: #0964b0;
-  content: "Upload File";
-}
-
-input[type="file"]::after {
-  position: absolute;
-  pointer-events: none;
-  /*   top: 10px; */
-  left: 16px;
-  height: 20px;
-  width: 20px;
-  content: "";
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230964B0'%3E%3Cpath d='M18 15v3H6v-3H4v3c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-3h-2zM7 9l1.41 1.41L11 7.83V16h2V7.83l2.59 2.58L17 9l-5-5-5 5z'/%3E%3C/svg%3E");
-}
-
-input[type="file"]::file-selector-button {
-  border-radius: 4px;
-  padding: 0 16px;
-  height: 40px;
-  cursor: pointer;
-  background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.16);
-  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
-  margin-right: 16px;
-  transition: background-color 200ms;
-}
-
-input[type="file"]::file-selector-button:hover {
-  background-color: #f3f4f6;
-}
-
-input[type="file"]::file-selector-button:active {
-  background-color: #e5e7eb;
-}
-
