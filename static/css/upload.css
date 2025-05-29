@@ -5,18 +5,22 @@ body {
   overflow: hidden;
 }
 
+.wrapperhead {
+    display: flexbox;
+    position: relative;
+    background-color: #89ff00;
+}
 
-
-nav {
+/*nav {
   position: relative;
   top: 5%;
   right: 0;
   left: 0;
   width: 319px;
-  display: flex;
+  display: table;
   margin: 0 auto;
   transform: translateY(-50%);
-}
+}*/
 
 @media screen and (max-width: 768px) {
   nav {
