@@ -5,3 +5,5 @@
 - Storage depends on your device - will expand to unlimited storage soon
 - Specifically tailored for raspberry pi hosting
 - File preview 
+
+[Development Paused]
